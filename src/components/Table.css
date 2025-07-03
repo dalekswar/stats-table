@@ -37,7 +37,7 @@ td {
 
 .value {
   flex: 1;
-  text-align: left;
+  text-align: right;
 }
 
 .percent {
