@@ -1,0 +1,145 @@
+table {
+  width: 100%;
+  border-spacing: 4px;
+  font-size: 14px;
+  border-collapse: separate;
+}
+
+th {
+  background: #f6f6f6;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  text-align: center;
+  border-radius: 6px;
+}
+
+td {
+  padding: 10px;
+  border: none;
+  text-align: center;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.selected td {
+  background-color: #d8f0ff !important;
+}
+
+.current-day-cell {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.value {
+  flex: 1;
+  text-align: left;
+}
+
+.percent {
+  flex-shrink: 0;
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.delta-green {
+  background-color: #e7f7e7;
+  color: green;
+}
+
+.delta-red {
+  background-color: #ffe6e6;
+  color: red;
+}
+
+.delta-gray {
+  background-color: #f2f2f2;
+  color: #666;
+}
+
+tr:hover td {
+  background-color: #eaf6ff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 16px;
+    border-radius: 8px;
+    background: none;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    background-color: #f6f6f6;
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #888;
+  }
+
+  .current-day-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 6px;
+  }
+
+  .current-day-cell .value {
+    font-weight: 600;
+    font-size: 16px;
+    color: inherit;
+    white-space: nowrap;
+  }
+
+  .current-day-cell .percent {
+    font-size: 14px;
+    font-weight: 500;
+    color: inherit;
+    white-space: nowrap;
+  }
+
+  .value {
+    font-weight: 600;
+    font-size: 16px;
+    color: inherit;
+  }
+
+  .percent {
+    font-size: 14px;
+    margin-top: 4px;
+    color: inherit;
+  }
+}
