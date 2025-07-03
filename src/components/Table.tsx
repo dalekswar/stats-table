@@ -14,8 +14,8 @@ const Table = ({ data, onSelect, selected }: Props) => {
     <table>
       <thead>
         <tr>
-          <th>Показатель</th>
-          <th>Текущий день</th>
+          <th className="gray-cell">Показатель</th>
+          <th className="gray-cell">Текущий день</th>
           <th>Вчера</th>
           <th>Этот день недели</th>
         </tr>
@@ -32,25 +32,20 @@ const Table = ({ data, onSelect, selected }: Props) => {
           return (
             <React.Fragment key={row.title}>
               <tr
-                onClick={() => {
-                  if (selected === row.title) {
-                    onSelect(null); 
-                  } else {
-                    onSelect(row);
-                  }
-                }}
+                onClick={() =>
+                  selected === row.title ? onSelect(null) : onSelect(row)
+                }
                 className={selected === row.title ? "selected" : ""}
               >
-                <td data-label="Показатель">{row.title}</td>
-
-                <td data-label="Текущий день">
+                <td className="gray-cell" data-label="Показатель">
+                  {row.title}
+                </td>
+                <td className="gray-cell" data-label="Текущий день">
                   {row.current.toLocaleString()}
                 </td>
-
                 <td
                   data-label="Вчера"
                   className={
-                    "current-day-cell " +
                     (row.delta > 0
                       ? "delta-green"
                       : row.delta < 0
@@ -66,7 +61,6 @@ const Table = ({ data, onSelect, selected }: Props) => {
                     {row.delta}%
                   </span>
                 </td>
-
                 <td
                   data-label="Этот день недели"
                   className={weekClass}
@@ -74,7 +68,6 @@ const Table = ({ data, onSelect, selected }: Props) => {
                   {row.week.toLocaleString()}
                 </td>
               </tr>
-
               {selected === row.title && (
                 <tr>
                   <td colSpan={4}>
