@@ -28,7 +28,6 @@
 - **React** + **TypeScript**
 - **Highcharts** (через highcharts-react-official)
 - Чистый **CSS** без фреймворков
-- Git + GitHub
 
 ---
 
